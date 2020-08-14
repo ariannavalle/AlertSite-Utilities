@@ -17,7 +17,7 @@ def getAccessToken(username,password):
     token = r.json()['access_token']
     return token
 
-def createWebMonitor():
+def createBrowserMonitor():
     token = getAccessToken(username,password)
     header = {'Authorization': 'Bearer ' + token}
     payload = {
@@ -33,9 +33,8 @@ def createWebMonitor():
         {"id": 62},
         {"id": 19},
         {"id": 71},
-        {"id": 75}
-    ],
-    "name": "AUT - US-WEST001 ",
+        {"id": 75}],
+    "name": "AUT - US-WEST001",
     "note": "SaaS Customer - US West (Oregon) Region",
     "type": "dejaclick",
     "url": "http://the-internet.herokuapp.com/",
@@ -50,4 +49,4 @@ def createWebMonitor():
     else: 
         print(r)
 
-createWebMonitor()
+createBrowserMonitor()
